@@ -24,25 +24,40 @@ const createDeck = () => {
 };
 createDeck();
 
-
-
-
-
-
 const askCard = () => {
+  if (deck.length === 0) {
+    throw "No cards in the deck";
+  }
 
-    let card = deck.pop();
-    let deckWithOutCard = () => {
-        for (let i = 0; index < deck.length; index++) {
-            if (deck[i] === card){
-                let spliced = deck.splice(i, 1)
-            }
-        }
-    }
+  const card = deck.pop();
 
-  console.log(card);
-  console.log(deck);
-  console.log(deckWithOutCard);
+  // let deckWithOutCard = () => {
+  //     for (let i = 0; index < deck.length; index++) {
+  //         if (deck[i] === card){
+  //             let spliced = deck.splice(i, 1)
+  //         }
+  //     }
+  //     deckWithOutCard = deck.spliced()
+  // }
+  return card;
+};
+// askCard();
+
+const cardValue = (card) => {
+  const value = card.substring(0, card.length - 1);
+  return isNaN(value) ? (value === "A" ? 11 : 10) : value * 1;
+
+  //   let points = 0;
+
+  //   if (isNaN(value)) {
+  //     points = value === "A" ? 11 : 10;
+  //     console.log("No es un numero");
+  //   } else {
+  //     console.log("Es un numero");
+  //     points = value * 1;
+  //   }
+  //   console.log(points);
 };
 
-askCard();
+const value = cardValue(askCard());
+console.log({ value });
