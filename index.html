@@ -14,41 +14,46 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
-    <header class="titulo">Blackjack</header>
-
+    
+    <header class="title">
+        Blackjack
+    </header>
+    
     <div class="row mt-2">
-      <div class="col text-center">
-        <button class="btn btn-danger">Nuevo Juego</button>
-        <button class="btn btn-primary">Pedir Carta</button>
-        <button class="btn btn-primary">Detener</button>
-      </div>
-    </div>
-    <div class="row container">
-      <div class="col">
-        <h1>Jugador 1 - <small>0</small></h1>
-        <div id="jugadorCartas">
-          <img class="carta" src="assets/cartas/2C.png" />
-          <img class="carta" src="assets/cartas/2C.png" />
-          <img class="carta" src="assets/cartas/2C.png" />
-          <img class="carta" src="assets/cartas/2C.png" />
+        <div id="divBtn" class="col text-center">
+
+            <button id="btnNew" class="btn btn-danger">New Game</button>
+            <button id="btnAsk" class="btn btn-primary">Ask Card</button>
+            <button id="btnStop" class="btn btn-primary">Stop</button> 
+
         </div>
-      </div>
+    </div>
+
+    <div class="row container">
+        <div class="col">
+
+            <h1>Player - <small>0</small></h1>
+            <div id="playerCards">
+                <!-- <img class="carta" src="assets/cartas/2C.png"> -->
+            </div>
+
+        </div>
     </div>
 
     <div class="row container mt-2">
-      <div class="col">
-        <h1>Computadora - <small>0</small></h1>
-        <div id="computadoraCartas">
-          <img class="carta" src="assets/cartas/3C.png" />
-          <img class="carta" src="assets/cartas/3C.png" />
-          <img class="carta" src="assets/cartas/3C.png" />
-          <img class="carta" src="assets/cartas/3C.png" />
+        <div class="col">
+
+            <h1>Dealer - <small>0</small></h1>
+            <div id="dealerCards">
+                <!-- <img class="carta" src="assets/cartas/3C.png"> -->
+            </div>
+
         </div>
-      </div>
     </div>
+
 
     <script src="assets/js/underscore.js"></script>
     <script src="assets/js/juego.js"></script>
-  </body>
+
+</body>
 </html>

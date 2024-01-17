@@ -5,6 +5,11 @@ let deckWithOutCard = [];
 const types = ["C", "D", "H", "S"];
 const specials = ["A", "J", "Q", "K"];
 
+let playerPoints = 0,
+dealerPoints = 0;
+
+const btnAsk = document.querySelector("#btnAsk");
+
 const createDeck = () => {
   for (let i = 2; i <= 10; i++) {
     for (let type of types) {
@@ -19,8 +24,6 @@ const createDeck = () => {
   }
   //   console.log(deck);
   deck = _.shuffle(deck);
-
-  console.log(deck);
 };
 createDeck();
 
@@ -46,18 +49,10 @@ const askCard = () => {
 const cardValue = (card) => {
   const value = card.substring(0, card.length - 1);
   return isNaN(value) ? (value === "A" ? 11 : 10) : value * 1;
-
-  //   let points = 0;
-
-  //   if (isNaN(value)) {
-  //     points = value === "A" ? 11 : 10;
-  //     console.log("No es un numero");
-  //   } else {
-  //     console.log("Es un numero");
-  //     points = value * 1;
-  //   }
-  //   console.log(points);
 };
 
-const value = cardValue(askCard());
-console.log({ value });
+btnAsk.addEventListener("click", () => {
+  const card = askCard();
+
+
+});
