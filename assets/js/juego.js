@@ -8,6 +8,7 @@ const specials = ["A", "J", "Q", "K"];
 let playerPoints = 0,
   dealerPoints = 0;
 
+const divPlayerCards = document.querySelector("#playerCards");
 const playerScore = document.querySelector("small");
 
 const btnAsk = document.querySelector("#btnAsk");
@@ -58,5 +59,16 @@ btnAsk.addEventListener("click", () => {
   playerPoints = playerPoints + cardValue(card);
   playerScore.innerHTML = `${playerPoints}`;
 
-  console.log(playerPoints);
+  const cardImg = document.createElement("img");
+  cardImg.src = `assets/cartas/${card}.png`;
+  cardImg.classList.add("card");
+  divPlayerCards.append(cardImg);
+
+  if (playerPoints > 21) {
+    console.warn("Sorry, You have lost");
+    btnAsk.disabled = true;
+  } else if (playerPoints === 21) {
+    console.warn("21, You won!");
+    btnAsk.disabled = true;
+  }
 });
