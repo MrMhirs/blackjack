@@ -6,7 +6,9 @@ const types = ["C", "D", "H", "S"];
 const specials = ["A", "J", "Q", "K"];
 
 let playerPoints = 0,
-dealerPoints = 0;
+  dealerPoints = 0;
+
+const playerScore = document.querySelector("small");
 
 const btnAsk = document.querySelector("#btnAsk");
 
@@ -53,6 +55,8 @@ const cardValue = (card) => {
 
 btnAsk.addEventListener("click", () => {
   const card = askCard();
+  playerPoints = playerPoints + cardValue(card);
+  playerScore.innerHTML = `${playerPoints}`;
 
-
+  console.log(playerPoints);
 });
